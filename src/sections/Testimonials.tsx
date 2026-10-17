@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const testimonials = [
   {
     name: "John Doe",
@@ -20,7 +22,13 @@ export default function Testimonials() {
       <div className="grid gap-8 md:grid-cols-2">
         {testimonials.map(({ name, position, text, avatar }) => (
           <div key={name} className="p-6 bg-gray-800 rounded-lg shadow-lg flex items-center gap-4">
-            <img src={avatar} alt={name} className="w-16 h-16 rounded-full object-cover" />
+            <Image
+              src={avatar}
+              alt={name}
+              width={64}
+              height={64}
+              className="w-16 h-16 rounded-full object-cover"
+            />
             <div>
               <p className="italic mb-2">&quot;{text}&quot;</p>
               <h3 className="font-semibold">{name}</h3>
